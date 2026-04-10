@@ -11,14 +11,17 @@ function App() {
   const [appliances, setAppliances] = useState([]);
 
   return (
-    <div>
+    <div className="app-container">
       <h1>WattWise</h1>
+      <p>Understand your energy usage. Reduce your household bills.</p>
 
-      <button onClick={() => setPage("dashboard")}>Dashboard</button>
-      <button onClick={() => setPage("tariff")}>Tariff</button>
-      <button onClick={() => setPage("calculator")}>Calculator</button>
-      <button onClick={() => setPage("split")}>Bill Split</button>
-      <button onClick={() => setPage("insights")}>Insights</button>
+      <div className="card">
+        <button onClick={() => setPage("dashboard")}>Dashboard</button>
+        <button onClick={() => setPage("tariff")}>Tariff</button>
+        <button onClick={() => setPage("calculator")}>Calculator</button>
+        <button onClick={() => setPage("split")}>Bill Split</button>
+        <button onClick={() => setPage("insights")}>Insights</button>
+      </div>
 
       {page === "dashboard" && (
         <Dashboard appliances={appliances} tariff={tariff} />
