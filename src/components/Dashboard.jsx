@@ -17,6 +17,10 @@ function Dashboard({ appliances, tariff }) {
   return (
     <div>
       <h2>Dashboard</h2>
+      
+      <h3 className="highlight">
+  Estimated Monthly Cost: £{totalMonthly.toFixed(2)}
+</h3>
 
       <p>Current tariff: {tariff}p per kWh</p>
 

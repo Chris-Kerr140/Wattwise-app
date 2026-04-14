@@ -32,7 +32,7 @@ function Calculator({ tariff, appliances, setAppliances }) {
 
   return (
     <div>
-      <h2>Appliance Cost Calculator</h2>
+      <h2>🔌 Appliance Cost Calculator</h2>
 
       <input
         placeholder="Appliance name"
