@@ -10,8 +10,10 @@ function Insights({ appliances }) {
 
   return (
     <div>
-      <h2>Savings Insights</h2>
-
+<h2 className="section-title">
+  <span className="section-icon">💡</span>
+  Savings Insights
+</h2>
       {appliances.map((a, i) => {
         const monthly = Number(a.monthly);
 

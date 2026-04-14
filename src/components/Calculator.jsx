@@ -24,16 +24,28 @@ function Calculator({ tariff, appliances, setAppliances }) {
 
     setAppliances([...appliances, newAppliance]);
 
-    // reset inputs after adding
     setName("");
     setWatts("");
     setHours("");
   };
 
-  return (
-    <div>
-      <h2>🔌 Appliance Cost Calculator</h2>
+  const loadExample = () => {
+    const exampleAppliance = {
+      name: "Electric Heater",
+      daily: "6.43",
+      monthly: "192.90",
+      yearly: "2347.00"
+    };
 
+    setAppliances([...appliances, exampleAppliance]);
+  };
+
+  return (
+    <div className="card">
+<h2 className="section-title">
+  <span className="section-icon">🔌</span>
+  Appliance Cost Calculator
+</h2>
       <input
         placeholder="Appliance name"
         value={name}
@@ -56,6 +68,10 @@ function Calculator({ tariff, appliances, setAppliances }) {
 
       <button onClick={addAppliance}>
         Add Appliance
+      </button>
+
+      <button onClick={loadExample}>
+        Load Example Appliance
       </button>
 
       <ul>

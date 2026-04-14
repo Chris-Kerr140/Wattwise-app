@@ -11,16 +11,58 @@ function App() {
   const [appliances, setAppliances] = useState([]);
 
   return (
-    <div className="header">
-      <h1>⚡ WattWise</h1>
-      <p>Understand your energy usage. Reduce your household bills.</p>
+    <div className="app-container">
+      <div className="header">
+<h1 className="logo">
+  <span className="logo-icon">⚡</span> WattWise
+</h1>
+        <p>Understand your energy usage. Reduce your household bills.</p>
+      </div>
+
+      {appliances.length > 0 && (
+  <div className="top-metric">
+    Estimated Monthly Cost: £
+    {appliances
+      .reduce((sum, a) => sum + Number(a.monthly), 0)
+      .toFixed(2)}
+  </div>
+)}
 
       <div className="card nav-bar">
-        <button onClick={() => setPage("dashboard")}>Dashboard</button>
-        <button onClick={() => setPage("tariff")}>Tariff</button>
-        <button onClick={() => setPage("calculator")}>Calculator</button>
-        <button onClick={() => setPage("split")}>Bill Split</button>
-        <button onClick={() => setPage("insights")}>Insights</button>
+        <button
+          className={page === "dashboard" ? "active" : ""}
+          onClick={() => setPage("dashboard")}
+        >
+          Dashboard
+        </button>
+
+        <button
+          className={page === "tariff" ? "active" : ""}
+          onClick={() => setPage("tariff")}
+        >
+          Tariff
+        </button>
+
+        <button
+          className={page === "calculator" ? "active" : ""}
+          onClick={() => setPage("calculator")}
+        >
+          Calculator
+        </button>
+
+        <button
+          className={page === "split" ? "active" : ""}
+          onClick={() => setPage("split")}
+        >
+          Bill Split
+        </button>
+
+        <button
+          className={page === "insights" ? "active" : ""}
+          onClick={() => setPage("insights")}
+        >
+          Insights
+        </button>
       </div>
 
       {page === "dashboard" && (
@@ -46,6 +88,10 @@ function App() {
       {page === "insights" && (
         <Insights appliances={appliances} />
       )}
+
+      <footer className="footer">
+        WattWise prototype – Student energy cost insights tool
+      </footer>
     </div>
   );
 }

@@ -18,8 +18,10 @@ function BillSplit({ appliances }) {
 
   return (
     <div>
-      <h2>Smart Household Bill Split</h2>
-
+<h2 className="section-title">
+  <span className="section-icon">🏠</span>
+  Smart Household Bill Split
+</h2>
       <label>Number of housemates:</label>
 
       <input
